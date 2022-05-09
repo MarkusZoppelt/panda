@@ -1,0 +1,106 @@
+body {
+    color: 212121;
+    background-color: white;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    max-width: 50em;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+li {
+    margin: 0.4rem 0;
+}
+
+a {
+    color: #1565c0;
+    text-decoration: none;
+}
+
+a.hover {
+    text-decoration: underline;
+}
+
+
+/* Table */
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1.5px solid #90caf9;
+}
+
+th,
+td {
+    padding: 0.5em 1em;
+    border: 1.5px solid #90caf9;
+}
+
+/* Code */
+pre code {
+    margin: 0;
+    padding: 0;
+    white-space: pre;
+    border: none;
+    background: transparent;
+}
+
+pre {
+    background-color: #f8f8f8;
+    border: 1px solid #cccccc;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 6px 10px;
+    border-radius: 3px;
+}
+
+pre code,
+pre tt {
+    background-color: transparent;
+    border: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #121212;
+        color: rgba(255, 255, 255, 0.87);
+        /* 87% white */
+    }
+
+    a {
+        color: #90caf9;
+        text-decoration: none;
+    }
+
+    a.hover {
+        text-decoration: underline;
+    }
+
+    /* Code */
+    pre code {
+        margin: 0;
+        padding: 0;
+        white-space: pre;
+        border: none;
+        background: transparent;
+    }
+
+    pre {
+        background-color: #151515;
+        border: 1px solid #cccccc;
+        font-size: 13px;
+        line-height: 19px;
+        overflow: auto;
+        padding: 6px 10px;
+        border-radius: 3px;
+    }
+
+    pre code,
+    pre tt {
+        background-color: transparent;
+        border: none;
+    }
+}
