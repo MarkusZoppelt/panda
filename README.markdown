@@ -17,6 +17,8 @@ Requirements:
 
 First, set your `outdir` and header in build.sh. Then, you can write posts in plain markdown. Make sure you put them in `posts/`.
 
+All files with the `.md` file extension in the root directory will be rendered as well, e.g. about.md will be available at /about.html.
+
 `images` and `css` get copied to `outdir` as well (change in build.sh if necessary)
 
 ## Generate your site:
