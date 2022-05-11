@@ -1,6 +1,11 @@
 # Panda
 
-Extremely simple static blogging engine (requires pandoc)
+Extremely simple static blogging engine
+
+Requirements:
+
+* zsh
+* pandoc
 
 ## Why the name?
 
@@ -12,7 +17,7 @@ Extremely simple static blogging engine (requires pandoc)
 
 First, set your `outdir` and header in build.sh. Then, you can write posts in plain markdown. Make sure you put them in `posts/`.
 
-`images` and `css` get copied to `outdir` as well.
+`images` and `css` get copied to `outdir` as well (change in build.sh if necessary)
 
 ## Generate your site:
     
@@ -24,5 +29,4 @@ Change to your `outdir` and run a webserver:
 
     cd docs
     python -m http.server
-
 

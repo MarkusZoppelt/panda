@@ -7,6 +7,15 @@ body {
     padding: 4rem 2rem;
 }
 
+img {
+    width: 90%;
+    height: auto;
+}
+
+img.medium {
+    width: 70%;
+}
+
 p {
     margin: 1rem 0;
 }
@@ -24,18 +33,26 @@ a.hover {
     text-decoration: underline;
 }
 
+footer {
+	font-size: 12px;
+	bottom: 1px;
+}
+
 
 /* Table */
 table {
     margin-left: auto;
     margin-right: auto;
-    border: 1.5px solid #90caf9;
+    border: 0.5px solid #90caf9;
+    width: 100%;
 }
 
 th,
 td {
-    padding: 0.5em 1em;
-    border: 1.5px solid #90caf9;
+    padding: 0.2em 0.5em;
+    border: 0.5px solid #90caf9;
+	font-size: 90%;
+
 }
 
 /* Code */

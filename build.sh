@@ -8,56 +8,45 @@ outdir=docs
 [ -d "$outdir" ] && rm -rf $outdir && mkdir $outdir || mkdir $outdir
 
 # copy necessary directories
-cp -r images $outdir/.
-cp -r css $outdir/.
+cp -r css images $outdir/.
+
+# We will generate sites for every .md file so cp index.md to safety
+cp index.md index.lock
 
 # Generate posts from markdown (posts/)
-for post in posts/*.md
+for post in $(ls posts/*.md | sort -r); do
     pandoc -V lang=en $post \
         -t html5 \
         -o $outdir/${$(basename $post)%.*}.html \
-        -s -c css/main.css
+        -s -c css/main.css \
+        -H header.html \
+        -A footer.html
 
-rm -f _index.md
-
-header="""
----
-title: Your blog
-language: en-EN
----
-"""
-
-echo $header > _index.md
-
-for post in $(ls posts/*.md | sort -r); do
-    # get URI, use this as href
-    uri=${$(basename $post)%.*}
-    
-    # get date
+    uri=${$(basename $post)%.*}    
     date=${uri:0:10}
-
-    # get name
     name=$(echo $uri | cut -c12-)
     prettyname=$(echo $name | tr '-' ' ')
     
-    echo "Generating post:"
-    echo $date
-    echo $prettyname
-    echo "================================================="
+    echo "Generating post: ($date) $prettyname"
 
-    # build 
-    echo "<div class='content'>" >> _index.md
-    echo "<i>$date</i><br />" >> _index.md
-    echo "<a href='$uri.html'>$prettyname</a>" >> _index.md
-    echo "</div>" >> _index.md
+    echo "<div class='content'>" >> index.md
+    echo "<i>$date</i><br />" >> index.md
+    echo "<a href='$uri.html'>$prettyname</a>" >> index.md
+    echo "</div>" >> index.md
 done
 
-echo "Generating index..."
-pandoc -V lang=en _index.md \
-        -t html5 \
-        -o $outdir/index.html \
-        -s -c css/main.css
+# Generate sites
+for site in *.md; do
+  pandoc -V lang=en $site \
+          -t html5 \
+          -o $outdir/${$(basename $site)%.*}.html \
+          -s -c css/main.css \
+          -H header.html \
+          -A footer.html
+  echo "Generated $site"
+done
 
-rm _index.md
+#Restore index.md
+mv index.lock index.md
 
 echo "Done!"
