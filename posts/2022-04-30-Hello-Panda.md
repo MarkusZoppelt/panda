@@ -1,14 +1,13 @@
 ---
 title: "Hello Panda!"
+description: "Meta description goes here!"
 date: 2022-04-30
 language: en-EN
-header-includes:
-    <meta name="Your description goes here" />
 ---
 
 Panda salutes you for your good taste in blogging engines!
 
-![](images/panda.webp)
+![Panda waving at you](images/panda.webp)
 
 ## Why the name?
 
