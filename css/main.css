@@ -80,6 +80,10 @@ pre {
     border-radius: 3px;
 }
 
+.sourceCode {
+	overflow: auto;
+}
+
 pre code,
 pre tt {
     background-color: transparent;
@@ -120,6 +124,10 @@ pre tt {
         padding: 6px 10px;
         border-radius: 3px;
     }
+
+	.sourceCode {
+		overflow: auto;
+	}
 
     pre code,
     pre tt {
